@@ -216,10 +216,10 @@ body {
     display: flex;
     flex-direction: row;
     gap: 12px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15));
     backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 8px;
     border-radius: 50px;
     width: fit-content;
