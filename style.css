@@ -214,16 +214,57 @@ body {
 .input-group {
     display: flex;
     flex-direction: row;
-    /* Horizontal */
     gap: 12px;
     background: rgba(255, 255, 255, 0.03);
-    /* Subtle container bg */
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 8px;
     border-radius: 50px;
-    /* Pill shape container */
     width: fit-content;
     margin: 0 auto;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* Moving Train Light Effect */
+.input-group::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg,
+            transparent 0deg,
+            transparent 270deg,
+            rgba(255, 255, 255, 0.8) 320deg,
+            transparent 360deg);
+    animation: rotateBorder 3s linear infinite;
+    z-index: -1;
+}
+
+/* Inner Background to hide the center of the conic gradient */
+.input-group::after {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    /* Border width */
+    background: rgba(20, 20, 20, 0.8);
+    /* Dark background matching theme */
+    border-radius: 50px;
+    z-index: -1;
+}
+
+@keyframes rotateBorder {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .input-field {
@@ -437,20 +478,35 @@ body {
     }
 
     .glass-card {
-        padding: 30px 20px;
+        padding: 40px 20px;
+        width: 90%;
+        /* prevent edge touching */
     }
 
     .input-group {
         flex-direction: column;
+        width: 100%;
         background: transparent;
         border: none;
+        padding: 0;
     }
 
     .input-field {
+        width: 100%;
+        /* Full width on mobile */
         margin-bottom: 10px;
+        text-align: center;
+        /* Re-center text for vertical look */
+    }
+
+    .input-group button {
+        width: 100%;
+        /* Full width button */
     }
 
     .large-text {
-        font-size: 5rem;
+        font-size: 4rem;
+        bottom: -20px;
+        /* Adjust position */
     }
 }

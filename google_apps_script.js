@@ -25,8 +25,6 @@ function doPost(e) {
 
     var name = data.name;
     var email = data.email;
-    var date = new Date();
-
     // Determine the next row. Start at row 7 if sheet is empty or below row 7.
     var lastRow = sheet.getLastRow();
     var targetRow = Math.max(lastRow + 1, 7);
@@ -34,12 +32,8 @@ function doPost(e) {
     // Set values in specific columns:
     // Column B (2) = Name
     // Column C (3) = Email
-    // Column D (4) = Timestamp
-    // Column E (5) = Human Readable Date
     sheet.getRange(targetRow, 2).setValue(name);
     sheet.getRange(targetRow, 3).setValue(email);
-    sheet.getRange(targetRow, 4).setValue(date.toISOString());
-    sheet.getRange(targetRow, 5).setValue(date.toLocaleString());
 
     // Return success
     return ContentService.createTextOutput(JSON.stringify({ "result": "success" }))

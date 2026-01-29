@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // GOOGLE SHEETS URL (User needs to replace this)
         // GOOGLE SHEETS URL
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzx8VlrtAxYG2_MSc164I6eh_qh4woeT4JFCyfUupLgACwvMImAqaz-4pw6dRpM0dPu0w/exec';
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbznH6KD90pwo2V4Wf52a_hGjeRLDTDdBAlL-aAuLqPEU_gFj1ug5hatgLe7HYu_MYUZMg/exec';
 
         // Payload
         const requestPayload = {
